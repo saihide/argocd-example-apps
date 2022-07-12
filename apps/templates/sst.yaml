@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-sst
+  namespace: {{ .Values.spec.destination.namespace}}
+spec:
+  project: default
+  source:
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: app-sub
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-sst.yaml
+  destination:
+    namespace: {{ .Values.spec.destination.namespace}}
+    server: {{ .Values.spec.destination.server }}
+  syncPolicy:
+    automated:
+      prune: true
+
