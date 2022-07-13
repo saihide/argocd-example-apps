@@ -101,7 +101,7 @@ spec:
         value: {{ template "mia.template.name" .}}
   destination:
     namespace: argocd
-    server: {{ .Values.spec.destination.server }}
+    name: {{ .Values.spec.destination.name }}
   syncPolicy:
     automated:
       prune: true
