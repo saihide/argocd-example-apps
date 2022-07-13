@@ -1,4 +1,4 @@
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    server: https://10.206.0.13:6443
     namespace: test
