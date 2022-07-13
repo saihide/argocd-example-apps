@@ -90,17 +90,8 @@ spec:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
     path: {{ template "mia.template.name" .}}
-    plugin:
-      name: kustomize-envsubst
-      env:
-      - name: APP_NAMESPACE
-        value: {{.Values.spec.destination.namespace}}
-      - name: DOLLAR_ESCAPE
-        value: $
-      - name: APPNAME
-        value: {{ template "mia.template.name" .}}
   destination:
-    namespace: argocd
+    namespace: {{.Values.spec.destination.namespace}}
     name: {{ .Values.spec.destination.name }}
   syncPolicy:
     automated:
