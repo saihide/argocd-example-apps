@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cooper
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: cooper
+  template:
+    metadata:
+      labels:
+        app: cooper
+    spec:
+      containers:
+      - image: xiaoyan1121/ks-guestbook-demo:0.2
+        name: cooper
+        ports:
+        - containerPort: 80

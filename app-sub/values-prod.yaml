@@ -1,4 +1,4 @@
 spec:
   destination:
-    server: https://prod.svc
-    namespace: test
+    name: kubernetes-admin@kubernetes
+    namespace: prod
