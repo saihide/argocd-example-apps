@@ -15,7 +15,7 @@ spec:
         - values-sst.yaml
   destination:
     namespace: {{ .Values.spec.destination.namespace}}
-    server: {{ .Values.spec.destination.server }}
+    name: {{ .Values.spec.destination.name }}
   syncPolicy:
     automated:
       prune: true
