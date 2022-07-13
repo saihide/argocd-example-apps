@@ -1,0 +1,4 @@
+spec:
+  destination:
+    server: https://prod.svc
+    namespace: test
