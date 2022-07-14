@@ -94,8 +94,7 @@ spec:
     namespace: {{.Values.spec.destination.namespace}}
     name: {{ .Values.spec.destination.name }}
   syncPolicy:
-    automated:
-      prune: true
+    automated: {}
 
 {{- end -}}
 
