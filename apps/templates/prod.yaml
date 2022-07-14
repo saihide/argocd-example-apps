@@ -15,7 +15,7 @@ spec:
         - values-prod.yaml
   destination:
     namespace: {{ .Values.spec.destination.namespace}}
-    name: {{ .Values.spec.destination.name }}
+    name: kubernetes-admin@kubernetes
   syncPolicy:
     automated:
       prune: true
