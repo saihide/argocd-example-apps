@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appsets
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: test
+            name: in-cluster
+          - cluster: prod
+            name: kubernetes-admin@kubernetes
+  template:
+    metadata:
+      name: 'xxx-{{cluster}}'
+    spec:
+      project: default
+      source:
+        repoURL: {{ .Values.spec.source.repoURL }}
+        targetRevision: master
+        path: app-sub
+        helm:
+          valueFiles:
+            - values.yaml
+            - 'values-{{cluster}}.yaml'
+      destination:
+        server: '{{name}}'
+        namespace: '{{cluster}}'
