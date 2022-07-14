@@ -23,5 +23,5 @@ spec:
           valueFiles:
             - values.yaml
       destination:
-        server: '{{name}}'
+        name: '{{name}}'
         namespace: '{{cluster}}'
