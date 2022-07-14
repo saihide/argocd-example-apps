@@ -14,7 +14,7 @@ spec:
         - values.yaml
         - values-test.yaml
   destination:
-    namespace: {{ .Values.spec.destination.namespace}}
+    namespace: test
     name: {{ .Values.spec.destination.name }}
   syncPolicy:
     automated:
