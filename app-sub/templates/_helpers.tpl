@@ -96,6 +96,7 @@ spec:
   syncPolicy:
     automated:
       prune: true
+      selfHeal: true
 {{- end -}}
 
 {{/*
