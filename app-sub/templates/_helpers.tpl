@@ -96,9 +96,6 @@ spec:
   syncPolicy:
     automated:
       prune: true
-    syncOptions:
-      - PrunePropagationPolicy=orphan
-      - CreateNamespace=true
 {{- end -}}
 
 {{/*
