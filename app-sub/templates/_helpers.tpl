@@ -96,8 +96,6 @@ spec:
   syncPolicy:
     automated:
       prune: true
-    preserveResourcesOnDeletion: true
-
 {{- end -}}
 
 {{/*
