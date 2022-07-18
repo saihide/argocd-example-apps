@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: prometheus
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: offline
+            name: in-cluster
+          - cluster: online
+            name: online
+  template:
+    metadata:
+      name: 'prometheus-{{cluster}}'
+    spec:
+      project: default
+      source:
+        repoURL: {{ .Values.spec.source.repoURL }}
+        targetRevision: {{ .Values.spec.source.targetRevision }}
+        path: prometheus/{{cluster}}
+      destination:
+        name: '{{name}}'
+        namespace: monitoring
