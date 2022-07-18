@@ -17,8 +17,8 @@ spec:
     spec:
       project: default
       source:
-        repoURL: {{ .Values.spec.source.repoURL }}
-        targetRevision: {{ .Values.spec.source.targetRevision }}
+        repoURL: git@github.com:saihide/argocd-example-apps.git
+        targetRevision: master
         path: prometheus/{{cluster}}
       destination:
         name: '{{name}}'

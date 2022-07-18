@@ -1,7 +1,0 @@
-spec:
-  destination:
-    name: in-cluster
-    namespace: argocd
-  source:
-    repoURL: git@github.com:saihide/argocd-example-apps.git
-    targetRevision: master
